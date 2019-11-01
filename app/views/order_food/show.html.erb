@@ -1,0 +1,9 @@
+<div class="hero-text-box">
+  <% if @order_food %>
+    <h1>Your order has been successfully processed!<br>Order Id: <%= @order_food.id %>.</h1>
+    <%= link_to "Still hungry?", new_order_food_path, :class => "btn btn-full js--scroll-to-plans" %>
+  <% else %>
+    <h1>Oops, an error occured!.</h1>
+    <%= link_to "Try again?", new_order_food_path, :class => "btn btn-full js--scroll-to-plans" %>
+  <% end %>
+</div>

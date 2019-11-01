@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function prettyPrint() {
+    event.preventDefault();
+    const ugly = document.getElementById('input-body').value;
+    const obj = JSON.parse(ugly);
+    document.getElementById('input-body').value = JSON.stringify(obj, undefined, 4);
+}

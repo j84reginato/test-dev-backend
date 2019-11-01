@@ -2,13 +2,30 @@
 <html>
 <head>
   <title>TestDevBackend</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<header>
+  <nav>
+    <div class="row">
+      <div class="logo col-md-6">Test Dev Backend - DeliveryCenter</div>
+      <div class="menu col-md-6">
+        <ul class="main-nav js--main-nav">
+          <li><%= link_to "Home", home_path %></li>
+          <li><%= link_to "Order Food", new_order_food_path %></li>
+          <li><%= link_to "Sign up", about_path %></li>
+        </ul>
+        <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+</header>
 </body>
 </html>
